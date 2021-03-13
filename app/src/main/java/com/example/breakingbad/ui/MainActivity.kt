@@ -74,4 +74,9 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+    override fun onDestroy() {
+        charactersAdapter.cancelJop()
+        super.onDestroy()
+    }
 }
