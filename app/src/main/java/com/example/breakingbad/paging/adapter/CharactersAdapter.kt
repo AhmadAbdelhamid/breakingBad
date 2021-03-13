@@ -14,7 +14,7 @@ import kotlinx.coroutines.*
 import timber.log.Timber
 
 class CharactersAdapter :
-        PagingDataAdapter<Character, CharactersAdapter.PhotoViewHolder>(CharactersDIFFUTIL) {
+        PagingDataAdapter<Character, CharactersAdapter.CharacterViewHolder>(CharactersDIFFUTIL) {
 
     private val adapterJop = Job()
     private val scope = CoroutineScope(adapterJop + Dispatchers.Default)
@@ -25,26 +25,26 @@ class CharactersAdapter :
 
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PhotoViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharacterViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val binding = ItemCharacterBinding.inflate(layoutInflater, parent, false)
-        return PhotoViewHolder(binding)
+        return CharacterViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: PhotoViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: CharacterViewHolder, position: Int) {
         val item = getItem(position)
         if (item != null) {
             holder.bind(item)
         }
     }
 
-    override fun onViewAttachedToWindow(holder: PhotoViewHolder) {
+    override fun onViewAttachedToWindow(holder: CharacterViewHolder) {
         super.onViewAttachedToWindow(holder)
         holder.startJop()
         Timber.d("${holder.name} isActive: ${holder.job.isActive} / isCancelled: ${holder.job.isCancelled}")
     }
 
-    override fun onViewDetachedFromWindow(holder: PhotoViewHolder) {
+    override fun onViewDetachedFromWindow(holder: CharacterViewHolder) {
         super.onViewDetachedFromWindow(holder)
         holder.cancelJop()
         Timber.d("${holder.name} isActive: ${holder.job.isActive} / isCancelled: ${holder.job.isCancelled}")
@@ -70,7 +70,7 @@ class CharactersAdapter :
     /*******************************
              *ViewHolder*
      *******************************/
-    inner class PhotoViewHolder(private val binding: ItemCharacterBinding) :
+    inner class CharacterViewHolder(private val binding: ItemCharacterBinding) :
             RecyclerView.ViewHolder(binding.root) {
         lateinit var job: Job
         lateinit var name: String
@@ -91,7 +91,6 @@ class CharactersAdapter :
 
         private fun updateAge() {
             job = scope.launch {
-                this
                 withContext(Dispatchers.Main) {
                     binding.tvAge.text = DateUtil.calcAge(birthday)
                     notifyItemChanged(bindingAdapterPosition)
@@ -110,7 +109,6 @@ class CharactersAdapter :
 
         fun startJop() {
             job.start()
-            updateAge()
         }
 
         fun cancelJop() {
