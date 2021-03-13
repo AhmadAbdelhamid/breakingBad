@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="purple_200">#FFBB86FC</color>
-    <color name="colorPrimary">#132555</color>
-    <color name="colorPrimaryVariant">#FF0C2F8C</color>
-    <color name="colorSecondary">#1750C4</color>
+    <color name="colorPrimary">#0B1124</color>
+    <color name="colorPrimaryVariant">#132555</color>
+    <color name="colorSecondary">#FF0C2F8C</color>
     <color name="black">#FF000000</color>
-    <color name="colorOnPrimary">#E59F2B</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="gold">#E59F2B</color>
+    <color name="colorOnPrimary">#FFFFFFFF</color>
+    <color name="whiteTxt">#FFFFFFFF</color>
 </resources>

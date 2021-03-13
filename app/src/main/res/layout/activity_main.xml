@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0B1124"
+    android:background="@color/colorPrimary"
     tools:context=".ui.MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -21,13 +21,15 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:itemCount="4"
         tools:listitem="@layout/item_character" />
-    <ProgressBar
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
         android:id="@+id/progress_bar"
+        style="@style/Widget.MaterialComponents.CircularProgressIndicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:visibility="gone"
         android:layout_marginVertical="8dp"
+        android:indeterminateOnly="true"
+        app:indicatorColor="@color/gold"         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/text_view_empty"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -42,23 +44,23 @@
         android:layout_height="wrap_content"
         android:layout_above="@id/button_retry"
         android:layout_centerHorizontal="true"
-        android:text="Results could not be loaded"
-        android:visibility="gone"
         android:layout_marginVertical="8dp"
+        android:text="Results could not be loaded"
         android:textColor="@android:color/holo_red_light"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/text_view_empty"
         app:layout_constraintEnd_toEndOf="@+id/text_view_empty"
         app:layout_constraintStart_toStartOf="@+id/text_view_empty"
         app:layout_constraintTop_toTopOf="@+id/text_view_empty"
-        app:layout_constraintBottom_toBottomOf="@+id/text_view_empty"
         tools:visibility="visible" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_retry"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="Retry"
         android:layout_marginVertical="8dp"
+        android:text="Retry"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/text_view_empty"
@@ -72,9 +74,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
+        android:layout_marginVertical="8dp"
         android:text="No results found for this query"
         android:textColor="@android:color/white"
-        android:layout_marginVertical="8dp"
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/button_retry"
         app:layout_constraintEnd_toEndOf="@+id/progress_bar"

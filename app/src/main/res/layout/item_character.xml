@@ -22,7 +22,7 @@
 
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:backgroundTint="@color/colorPrimary"
+            android:backgroundTint="@color/colorPrimaryVariant"
             app:cardCornerRadius="4dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -46,7 +46,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="4dp"
-            android:textColor="@color/colorOnPrimary"
+            android:textColor="@color/gold"
             android:textSize="18sp"
             tools:text="tvName" />
 
@@ -55,7 +55,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="4dp"
-            android:textColor="@color/white"
+            android:textColor="@color/whiteTxt"
             android:textSize="12sp"
             tools:text="tvNickname" />
 
@@ -64,7 +64,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="4dp"
-            android:textColor="@color/white"
+            android:textColor="@color/whiteTxt"
             android:textSize="12sp"
             tools:text="tvStatus" />
         <com.google.android.material.textview.MaterialTextView
@@ -72,7 +72,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="4dp"
-            android:textColor="@color/white"
+            android:textColor="@color/whiteTxt"
             android:textSize="12sp"
             tools:text="tvBirthday" />
 
@@ -81,7 +81,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="4dp"
-            android:textColor="@color/white"
+            android:textColor="@color/whiteTxt"
             android:textSize="12sp"
             tools:text="tvAge" />
     </LinearLayout>
