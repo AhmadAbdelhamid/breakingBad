@@ -3,7 +3,7 @@
 Show list of Breaking bad characters with infinite scroll with timer showing live age at current moment.
 
 ## Screenshots
-![ Alt text](BreakingBad.gif) /![](BreakingBad.gif)
+![](BreakingBad.gif)
 
 ## Tech stack & Open-source libraries
 - Minimum SDK level 21.
