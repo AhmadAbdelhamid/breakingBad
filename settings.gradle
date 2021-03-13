@@ -1,0 +1,4 @@
+include ':remote'
+include ':model'
+include ':app'
+rootProject.name = "BreakingBad"
