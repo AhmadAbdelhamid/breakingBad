@@ -8,7 +8,6 @@ import androidx.paging.LoadState
 import com.example.breakingbad.databinding.ActivityMainBinding
 import com.example.breakingbad.paging.adapter.CharacterLoadStateAdapter
 import com.example.breakingbad.paging.adapter.CharactersAdapter
-import com.example.breakingbad.util.DateUtil
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -26,7 +25,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         initViews()
         bindViewModel()
-        DateUtil.calcAge()
     }
 
     private fun bindViewModel() {
@@ -75,5 +73,10 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    override fun onDestroy() {
+        charactersAdapter.cancelJop()
+        super.onDestroy()
     }
 }
